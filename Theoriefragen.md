@@ -44,3 +44,12 @@ Anbieter schürzt die Cloud, Nutzer schützt den Inhalt.
 | Vorteile               | Grösstes Angebot, flexibel, Marktführer            | Gute Integration mit Microsoft                 | Stark bei AI/ML, einfache Preise              |
 | Nachteile              | Komplex, teuer                                     | Weniger übersichtlich                          | Kleineres Ökosystem                           |
 
+## Auftrag 3.1: Grundlagen Container-Technologie
+* **Was ist Container-Technologie oder Container-Virtualisierung?**
+* **Was sind die Vor- und Nachteile der Container-Technologie zu virtuellen Servern (VM)?**
+* **Welche Produkte kennen Sie im Zusammenhang mit virtuellen Servern und Container?**
+* **Wie unterscheiden sich die Technologien VM und Container in Bezug auf Bereitstellung, Speicherplatz, Portabilität, Effizienz und Betriebssystem (Kernel)?**
+* **Können virtuelle Server immer durch Container ersetzt werden?**
+* **Können Sie die Begriffe Container, Image und Registry und erläutern?**
+* **Weshalb werden laufende Conatiner in der Praxis als unveränderbar (immutable) betrachtet?**
+* **Was ist unterschied zwischen Self-Managed und Fully Managed? Notieren Sie sich die wichtigsten Merkmale und diskutieren Sie die Ergebnisse in der Gruppe.**
