@@ -9,7 +9,10 @@
 6. git push --> alle committeten änderungen ins repo pushen
 7. git pull --> alle änderungen aus dem repo holen<br>
 ## Docker Befehle
-1. docker build -f <dockerfile> -t <cr-url z.b. ghcr.io/usrname/imgname:manifest> -->
+1. docker build -f <dockerfile> -t <cr-url z.b. ghcr.io/usrname/imgname:manifest>
+```
+docker build -f Dockerfile.web -t ghcr.io/corner-gif/web01:latest .
+```
 2. docker push <tag> --> pushen (ggfs. docker login)
 3. docker tag <old_tag><new_tag> --> tag ändern
 4. docker run -d(detach) -p 8080:80 (port weiterleitung) --name <name> <tag> --> container starten
