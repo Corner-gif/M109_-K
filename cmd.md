@@ -1,6 +1,6 @@
 # Commands
 ## Git
-```
+
 1. git innit --> repo Initialisieren
 2. git clone <url>/<ssh> --> repo klonen
 3. git status --> status anzeigen
@@ -20,7 +20,7 @@
 9. docker rmi <id/name> --> images löschen
 10. docker system prune -a(alles) --volumes --> alles weg
 11. docker ps (-a) --> container anzeigen<br>
-```
+
 
 pots = Container
 alles auslagern
