@@ -7,3 +7,5 @@
 5. git commit -m "nachricht" --> änderungen committen
 6. git push --> alle committeten änderungen ins repo pushen
 7. git pull --> alle änderungen aus dem repo holen
+## Docker Befehle
+1. docker build -f <dockerfile> -t <cr-url z.b. ghcr.io/usrname/imgname:manifest>
