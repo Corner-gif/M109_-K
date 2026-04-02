@@ -16,3 +16,16 @@ Cloud Computing ist ein Modell, das es ermöglicht, bequem, jederzeit und von ü
 * Was sind Cloud Service Modelle?<br>
 Definieren wie und für wen eine Cloud bereitgestellt wird
 
+## Auftrag 1.2: Grundlagen Cloud-Computing (Kopie)
+* Welche Cloud Dienstleistungen kennen Sie?
+Onedrive, HI Cloud
+* Welche Cloud Anbieter kennen Sie?
+AWS, Hürlimann Informatik AG
+* Was ist der wesentliche Unterschiede zwischen Monitoring und Logging in der Cloud?
+Monitoring Zeigt was passiert logging zeichnet auf was passiert ist.
+* Weshalb soll ich Dienste aus der Cloud beziehen? Was sind die Vorteile?
+Kosten, von überall erreichbar, Skalierbarkeit
+* Was sind die Nachteile?
+Abhängichkeit, weniger kontrolle, Datenschutz (daten liegen nicht bei dir)
+* Was beschreibt das Konzept der "Shared Responsibility" (geteilte Verantwortung) im Kontext der Nutzung von Public Cloud Diensten?
+Anbieter schürzt die Cloud, Nutzer schützt den Inhalt.
