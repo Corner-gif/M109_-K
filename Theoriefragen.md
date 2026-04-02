@@ -73,3 +73,11 @@ Horizontale Skalierbarkeit
 * **Was versteht man unter horizontaler Skalierung im Kontext von Cloud-Anwendungen?**
 
 * **Was gibt es für Deployment Strategien?**
+
+container:
+Kleinerer rescourcenverbrauch
+getrennte binaries
+
+CLI --> Command Line Interface
+Web UI
+API -->
