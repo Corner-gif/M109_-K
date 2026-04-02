@@ -19,3 +19,16 @@
 9. docker rmi <id/name> --> images löschen
 10. docker system prune -a(alles) --volumes --> alles weg
 11. docker ps (-a) --> container anzeigen<br>
+
+pots = Container
+alles auslagern
+immutable
+besteht aus:
+1. applikation
+2. middleware (nginx, appache)
+3. OS (alpine, coreos)
+4. auslagern ins git
+5. mw in container registry
+6. dockerfile baut zusammen
+7. pot kann gelöscht werden
+
