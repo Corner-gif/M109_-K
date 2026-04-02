@@ -51,14 +51,94 @@ Anbieter schürzt die Cloud, Nutzer schützt den Inhalt.
 | Nachteile              | Komplex, teuer                                     | Weniger übersichtlich                          | Kleineres Ökosystem                           |
 
 ## Auftrag 3.1: Grundlagen Container-Technologie
-* **Was ist Container-Technologie oder Container-Virtualisierung?**
-* **Was sind die Vor- und Nachteile der Container-Technologie zu virtuellen Servern (VM)?**
-* **Welche Produkte kennen Sie im Zusammenhang mit virtuellen Servern und Container?**
-* **Wie unterscheiden sich die Technologien VM und Container in Bezug auf Bereitstellung, Speicherplatz, Portabilität, Effizienz und Betriebssystem (Kernel)?**
-* **Können virtuelle Server immer durch Container ersetzt werden?**
-* **Können Sie die Begriffe Container, Image und Registry und erläutern?**
-* **Weshalb werden laufende Conatiner in der Praxis als unveränderbar (immutable) betrachtet?**
-* **Was ist unterschied zwischen Self-Managed und Fully Managed? Notieren Sie sich die wichtigsten Merkmale und diskutieren Sie die Ergebnisse in der Gruppe.**
+
+### Was ist Container-Technologie?
+Container sind eine Form der Virtualisierung, bei der Anwendungen mit allen Abhängigkeiten in isolierten Einheiten (Containern) laufen.  
+Sie teilen sich den Kernel des Host-Betriebssystems.
+
+---
+
+### Vorteile von Containern gegenüber VM
++ Sehr schnell startbereit
++ Weniger Ressourcenverbrauch
++ Kleinere Images
++ Einfach portierbar (läuft überall gleich)
+
+### Nachteile
+- Weniger Isolation als VM
+- Abhängig vom Host-Kernel
+- Sicherheit kann schwieriger sein
+
+---
+
+### Produkte (VM & Container)
+**VM:**
+- VMware
+- VirtualBox
+- Hyper-V
+
+**Container:**
+- Docker
+- Kubernetes
+- Podman
+
+---
+
+### Unterschiede: VM vs Container
+
+| Kriterium        | VM                          | Container                     |
+|------------------|-----------------------------|-------------------------------|
+| Bereitstellung   | langsam                     | sehr schnell                  |
+| Speicherplatz    | gross (GB)                  | klein (MB)                    |
+| Portabilität     | mittel                      | sehr hoch                     |
+| Effizienz        | geringer                    | sehr hoch                     |
+| Betriebssystem   | eigenes OS pro VM           | teilen Host-Kernel            |
+
+---
+
+### Können VMs ersetzt werden?
+Nein.  
+Container ersetzen VMs **nicht vollständig**, da:
+- VMs mehr Isolation bieten
+- verschiedene Betriebssysteme möglich sind
+
+---
+
+### Begriffe: Container, Image, Registry
+- **Container:** laufende Instanz eines Images  
+- **Image:** Vorlage (inkl. App + Abhängigkeiten)  
+- **Registry:** Speicherort für Images (z. B. Docker Hub)
+
+---
+
+### Warum sind Container immutable?
+Container werden nicht verändert, sondern neu erstellt.  
+→ Änderungen = neues Image  
+
+Vorteile:
+- konsistent
+- reproduzierbar
+- weniger Fehler
+
+---
+
+### Self-Managed vs Fully Managed
+
+**Self-Managed:**
+- Du verwaltest alles selbst
+- mehr Kontrolle
+- mehr Aufwand
+
+**Fully Managed:**
+- Anbieter übernimmt Betrieb
+- weniger Aufwand
+- weniger Kontrolle
+
+---
+
+### Kurzfazit
+Container = leicht, schnell, portabel  
+VM = stabil, isoliert, flexibel beim OS
 
 
 ## Auftrag 4.1: Container-Orchestrierung
