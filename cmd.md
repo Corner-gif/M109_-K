@@ -16,6 +16,9 @@ docker build -f Dockerfile.web -t ghcr.io/corner-gif/web01:latest .
 2. docker push <tag> --> pushen (ggfs. docker login)
 3. docker tag <old_tag><new_tag> --> tag ändern
 4. docker run -d(detach) -p 8080:80 (port weiterleitung) --name <name> <tag> --> container starten
+```
+docker run -d -p 8080:80 --name web01 ghcr.io/corner-gif/web01:latest
+```
 5. docker exec -it(interactive) <tag> /bi/sh oder /bin/bash 
 6. docker logs <name> --> docker logs anzeigen
 7. docker stop <id/name> --> container stoppen
