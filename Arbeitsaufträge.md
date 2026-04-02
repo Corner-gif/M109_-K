@@ -8,3 +8,7 @@
 ![help](Rescources/nginx.png)
 * Starten Sie einen Container auf Ihrer lokalen Container Engine (z. B. Docker), der Ihre HTML-Webseite ausliefert.
 ![help](Rescources/start.png)
+
+
+## Auftrag 3.3: Python-Webserver und Dateiverwaltung in Containern
+1. Python-Webserver erstellen:<br>
