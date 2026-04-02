@@ -34,3 +34,7 @@ besteht aus:
 6. dockerfile baut zusammen
 7. pot kann gelöscht werden
 
+Openshift:
+1. oc projects --> alle projekte
+2. oc project 264495-corleu --> projekt wechseln
+3. 
