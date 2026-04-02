@@ -7,7 +7,7 @@ CE:
 - containerd --> kubernetes
 - Docker
 - Podman
-- CRI-O
+- CRI-O<br>
 CO: 
 - K8S
 - mini Kube
