@@ -29,3 +29,17 @@ Kosten, von überall erreichbar, Skalierbarkeit
 Abhängichkeit, weniger kontrolle, Datenschutz (daten liegen nicht bei dir)
 * Was beschreibt das Konzept der "Shared Responsibility" (geteilte Verantwortung) im Kontext der Nutzung von Public Cloud Diensten?
 Anbieter schürzt die Cloud, Nutzer schützt den Inhalt.
+
+
+## Auftrag 2.1: Dienstleistungen von Cloud Anbietern vergleichen
+| Kriterium              | AWS (Amazon Web Services)                          | Microsoft Azure                                | Google Cloud                                  |
+|------------------------|----------------------------------------------------|------------------------------------------------|-----------------------------------------------|
+| Dienstleistungen       | EC2, S3, RDS, DynamoDB, SageMaker, VPC             | VMs, Blob Storage, SQL DB, Cosmos DB, Azure AI | Compute Engine, Cloud Storage, Cloud SQL,     |
+| Kostenstruktur         | Hoch, komplexe Preisstruktur                       | Mittel, gut für Microsoft-Kunden               | Oft günstiger, transparente Preise            |
+| Skalierbarkeit         | Sehr hoch (Marktführer)                            | Sehr gut (Enterprise)                          | Sehr gut (stark bei Big Data / AI)            |
+| Sicherheit             | Sehr ausgereift                                    | Sehr stark im Unternehmensbereich              | Sehr sichere Infrastruktur                    |
+| Verfügbarkeit          | Sehr hoch (globale Infrastruktur)                  | Sehr hoch                                      | Sehr hoch                                     |
+| Zuverlässigkeit        | Sehr hoch                                          | Hoch                                           | Hoch                                          |
+| Kundensupport          | Gut, aber kostenpflichtig                          | Sehr gut für Firmen                            | Gut, aber weniger verbreitet                  |
+| Vorteile               | Grösstes Angebot, flexibel, Marktführer            | Gute Integration mit Microsoft                 | Stark bei AI/ML, einfache Preise              |
+| Nachteile              | Komplex, teuer                                     | Weniger übersichtlich                          | Kleineres Ökosystem                           |
