@@ -147,13 +147,17 @@ Load Balancing
 Horizontale Skalierbarkeit
 überwachen verfügbarkeit usw.
 * **Wie funktioniert Container-Orchestrierung?**
-
+   * Container-Orchestrierung automatisiert das Verwalten von Containern.
 * **Welche Container-Orchestrierung Technologien kennen Sie?**
-
+   * Kubernetes
+   * Docker Swarm
 * **Was versteht man unter horizontaler Skalierung im Kontext von Cloud-Anwendungen?**
-
+   * Mehr Instanzen statt stärkere Hardware
 * **Was gibt es für Deployment Strategien?**
-
+    * Recreate: alte Version stoppen → neue starten (Downtime)
+    * Rolling Update: schrittweise ersetzen (keine Downtime)
+    * Blue-Green: zwei Umgebungen, Umschalten
+    * Canary: neue Version nur für wenige User testen
 container:
 Kleinerer rescourcenverbrauch
 getrennte binaries
@@ -161,3 +165,12 @@ getrennte binaries
 CLI --> Command Line Interface
 Web UI
 API -->
+
+
+* **Folgen Sie dem Tutorial https://docs.docker.com/compose/gettingstarted/**
+* **Erstellen Sie ein Diagramm und beschreiben Sie die einzelnen verwendeten Container.**
+* **Beantworten Sie folgende Fragen:**
+* **Was ist Redis?**
+* **Welche Ports werden genutzt?**
+* **Was ist die Bedeutung von ENV im Dockerfile?**
+* **Erstellen Sie ein Docker-Compose-File für die HTML-Webseite, die Sie unter Auftrag 3.2 erstellt haben.**
