@@ -170,6 +170,11 @@ API -->
 
 * **Beantworten Sie folgende Fragen:**
 * **Was ist Redis?**
-
+Redis ist eine In-Memory Datenbank (läuft im RAM)
+Schnelle Datenbank für temporäre daten.
 * **Welche Ports werden genutzt?**
+Web: 8000 → 5000
+Redis: 6379 (nur intern)
 * **Was ist die Bedeutung von ENV im Dockerfile?**
+ENV = Variable im Container setzen
+
