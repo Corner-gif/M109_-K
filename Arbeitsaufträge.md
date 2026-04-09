@@ -60,3 +60,9 @@ volumes:
 - ```WORDPRESS_DB_HOST: db:3306```
 * **Welche Daten müssen persistent gespeichert werden?**
 -  db_data:/var/lib/mysql
+
+### Aufgabe 2: Mapping zu Kubernetes
+
++-------+-----+
+|       |     |
++-------+-----+
