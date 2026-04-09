@@ -68,4 +68,5 @@ volumes:
 | `service` | Deployment + Service |
 | `ports` | Service (ClusterIP / NodePort / LoadBalancer) |
 | `environment` | ConfigMap / Secret |
-| `volumes` | PersistentVolumeClaim (PVC) |
+| `volumes` | PersistentVolumeClaim |
+- Kubernetes startet alle Pods gleichzeitig und erwartet, dass jede App selbst wartet bis ihre Abhängigkeiten bereit sind.
