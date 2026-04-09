@@ -43,4 +43,9 @@ besteht aus:
 Openshift:
 1. oc projects --> alle projekte
 2. oc project 264495-corleu --> projekt wechseln
-3. 
+
+
+Kubectl:
+kubectl get <was auch immer>
+kubectl apply -f <file>
+kubectl describe service <servicename>
