@@ -63,6 +63,9 @@ volumes:
 
 ### Aufgabe 2: Mapping zu Kubernetes
 
-+-------+-----+
-|       |     |
-+-------+-----+
+| Docker Compose | Kubernetes |
+|---|---|
+| `service` | Deployment + Service |
+| `ports` | Service (ClusterIP / NodePort / LoadBalancer) |
+| `environment` | ConfigMap / Secret |
+| `volumes` | PersistentVolumeClaim (PVC) |
