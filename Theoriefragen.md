@@ -166,11 +166,10 @@ CLI --> Command Line Interface
 Web UI
 API -->
 
+## Auftrag 4.2 Container Orchestration mit Docker Compose
 
-* **Folgen Sie dem Tutorial https://docs.docker.com/compose/gettingstarted/**
-* **Erstellen Sie ein Diagramm und beschreiben Sie die einzelnen verwendeten Container.**
 * **Beantworten Sie folgende Fragen:**
 * **Was ist Redis?**
+
 * **Welche Ports werden genutzt?**
 * **Was ist die Bedeutung von ENV im Dockerfile?**
-* **Erstellen Sie ein Docker-Compose-File für die HTML-Webseite, die Sie unter Auftrag 3.2 erstellt haben.**
