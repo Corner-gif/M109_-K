@@ -48,3 +48,15 @@ services:
 volumes:
   db_data:
 ```
+### Aufgabe 1
+* **Welche Services existieren?**
+- Wordpress
+- Mariadb
+* **Welcher Service ist zustandslos (stateless)?**
+- Wordpress
+* **Welcher Service ist zustandsbehaftet (stateful)?**
+- Mariadb
+* **Wie kommunizieren die Services miteinander?**
+- ```WORDPRESS_DB_HOST: db:3306```
+* **Welche Daten müssen persistent gespeichert werden?**
+-  db_data:/var/lib/mysql
