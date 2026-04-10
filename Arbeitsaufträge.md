@@ -70,3 +70,19 @@ volumes:
 | `environment` | ConfigMap / Secret |
 | `volumes` | PersistentVolumeClaim |
 - Kubernetes startet alle Pods gleichzeitig und erwartet, dass jede App selbst wartet bis ihre Abhängigkeiten bereit sind.
+
+
+# Auftrag 6.3: Appuio Tech Labs
+## Lab 4: Ein Container Image deployen
+1. Container Image deployen<br>
+```
+oc new-app quay.io/appuio/example-spring-boot --as-deployment-config
+```
+```
+C:\Users\cleue\M109_-K\config files\Aufgabe6.1>oc get pods -w
+NAME                                  READY   STATUS      RESTARTS   AGE
+example-spring-boot-1-deploy          0/1     Completed   0          92s
+example-spring-boot-1-dfrqt           1/1     Running     0          91s
+html-openshift-app-794874775c-k9p8d   1/1     Running     0          103m
+```
+2. 
