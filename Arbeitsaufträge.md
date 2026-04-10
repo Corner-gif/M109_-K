@@ -154,3 +154,6 @@ oc set probe dc/appuio-php-docker --readiness --get-url=http://:8080/health --in
 ```
 6. löschen beobachten
 ![help](Rescources/podlöschenbeobachten.png)
+
+
+
