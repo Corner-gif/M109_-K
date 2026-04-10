@@ -110,3 +110,47 @@ oc create route edge example-spring-boot-secure --service=example-spring-boot
 ```
 oc new-app appuio/example-php-docker-helloworld --name=appuio-php-docker --as-deployment-config
 ```
+2. ReplicationController kontrollieren
+```
+oc get rc
+```
+3. Skalieren unserer Beispiel Applikation
+```
+C:\Users\cleue\M109_-K\config files\Aufgabe6.1>oc scale --replicas=3 dc/appuio-php-docker
+Warning: apps.openshift.io/v1 DeploymentConfig is deprecated in v4.14+, unavailable in v4.10000+
+Warning: extensions/v1beta1 Scale is deprecated in v1.2+, unavailable in v1.16+
+deploymentconfig.apps.openshift.io/appuio-php-docker scaled
+```
+den Service kontrollieren
+```
+C:\Users\cleue\M109_-K\config files\Aufgabe6.1>oc describe svc appuio-php-docker
+Name:                     appuio-php-docker
+Namespace:                264495-corleu
+Labels:                   app=appuio-php-docker
+                          app.kubernetes.io/component=appuio-php-docker
+                          app.kubernetes.io/instance=appuio-php-docker
+Annotations:              openshift.io/generated-by: OpenShiftNewApp
+Selector:                 deploymentconfig=appuio-php-docker
+Type:                     ClusterIP
+IP Family Policy:         SingleStack
+IP Families:              IPv4
+IP:                       172.30.166.13
+IPs:                      172.30.166.13
+Port:                     8080-tcp  8080/TCP
+TargetPort:               8080/TCP
+Endpoints:                10.0.10.182:8080,10.0.6.34:8080,10.0.11.154:8080
+Port:                     8443-tcp  8443/TCP
+TargetPort:               8443/TCP
+Endpoints:                10.0.10.182:8443,10.0.6.34:8443,10.0.11.154:8443
+Session Affinity:         None
+Internal Traffic Policy:  Cluster
+Events:                   <none>
+```
+4. Skalierte App in der Web Console
+![help](Rescources/webscalingoc.png)
+5. Readiness Probe
+```
+oc set probe dc/appuio-php-docker --readiness --get-url=http://:8080/health --initial-delay-seconds=10
+```
+6. löschen beobachten
+![help](Rescources/podlöschenbeobachten.png)
