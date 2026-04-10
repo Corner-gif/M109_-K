@@ -85,4 +85,28 @@ example-spring-boot-1-deploy          0/1     Completed   0          92s
 example-spring-boot-1-dfrqt           1/1     Running     0          91s
 html-openshift-app-794874775c-k9p8d   1/1     Running     0          103m
 ```
-2. 
+
+
+## Lab 5: Routen erstellen
+1. routen prüfen
+```
+oc get routes
+```
+2. service namen holen
+```
+oc get services
+```
+3. ungesichert
+```
+oc expose service example-spring-boot
+```
+4. gesichert
+```
+oc create route edge example-spring-boot-secure --service=example-spring-boot
+```
+
+## Lab 6: Pod Scaling, Readiness Probe und Self Healing
+1. neue Applikation
+```
+oc new-app appuio/example-php-docker-helloworld --name=appuio-php-docker --as-deployment-config
+```

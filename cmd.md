@@ -49,3 +49,17 @@ Kubectl:
 kubectl get <was auch immer>
 kubectl apply -f <file>
 kubectl describe service <servicename>
+
+OC:
+- oc get service <Service Name>
+- oc get services <pod Name>
+- oc get pods
+- oc get services
+- oc describe <pod/service> <pod name/service name>
+- oc get imagestream <service name> -o json
+- oc get deploymentConfig example-spring-boot -o json
+- oc get routes
+- oc expose service <service name> --> ungesicherte route
+- oc create route edge example-spring-boot-secure --service=example-spring-boot --> gesicherte route<br>
+- oc get rc --> ReplicationController
+
