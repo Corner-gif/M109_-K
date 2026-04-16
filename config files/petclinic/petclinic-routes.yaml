@@ -1,0 +1,31 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: petclinic-app-frontend
+  labels:
+    app: petclinic-app-frontend
+    app.kubernetes.io/part-of: pet-clinic
+spec:
+  to:
+    kind: Service
+    name: petclinic-app-frontend
+  port:
+    targetPort: 8080
+  tls:
+    termination: edge
+---
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: petclinic-app-phpmyadmin
+  labels:
+    app: petclinic-app-phpmyadmin
+    app.kubernetes.io/part-of: pet-clinic
+spec:
+  to:
+    kind: Service
+    name: petclinic-app-phpmyadmin
+  port:
+    targetPort: 8080
+  tls:
+    termination: edge
