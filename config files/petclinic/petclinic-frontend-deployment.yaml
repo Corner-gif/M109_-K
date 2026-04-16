@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: petclinic-app-frontend
+  labels:
+    app: petclinic-app-frontend
+    app.kubernetes.io/part-of: pet-clinic
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: petclinic-app-frontend
+  template:
+    metadata:
+      labels:
+        app: petclinic-app-frontend
+        app.kubernetes.io/part-of: pet-clinic
+    spec:
+      containers:
+      - name: petclinic-app-frontend
+        image: ghcr.io/modul-i-ch-109/petclinic-app-frontend:latest
+        ports:
+        - containerPort: 8080
+        env:
+        - name: DATABASE_NAME
+          valueFrom:
+            secretKeyRef:
+              name: petclinic-app-secret
+              key: database-name
+        - name: DATABASE_HOST
+          valueFrom:
+            secretKeyRef:
+              name: petclinic-app-secret
+              key: database-host
+        - name: SPRING_PROFILES_ACTIVE
+          value: mysql
+        - name: MYSQL_URL
+          value: 'jdbc:mysql://${DATABASE_HOST}:3306/${DATABASE_NAME}'

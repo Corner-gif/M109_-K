@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: petclinic-app-adminer
+  labels:
+    app: petclinic-app-adminer
+    app.kubernetes.io/part-of: pet-clinic
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: petclinic-app-adminer
+  template:
+    metadata:
+      labels:
+        app: petclinic-app-adminer
+        app.kubernetes.io/part-of: pet-clinic
+    spec:
+      containers:
+      - name: petclinic-app-adminer
+        image: adminer:latest
+        ports:
+        - containerPort: 8080
