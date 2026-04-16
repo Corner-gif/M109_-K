@@ -1,0 +1,91 @@
+version: "3.8"
+networks:
+  inventory-app:
+volumes:
+  postgres-data:
+  ldap-data:
+  ldap-config:   
+services:
+  db: 
+    image: postgres:15
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes: 
+    - postgres-data:/var/lib/postgresql/data 
+    - ./app/init.sql:/docker-entrypoint-initdb.d/init.sql 
+    networks:
+      - inventory-app
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      retries: 5
+  pgadmin:
+    image: ghcr.io/modul-i-ch-109/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: cornel.leuenberger@edu.tbz.ch
+      PGADMIN_DEFAULT_PASSWORD: pgadmin
+    ports:
+      - 5050:80
+    networks:
+      - inventory-app
+    depends_on: 
+      db:
+        condition: service_healthy
+  ldap:
+    image: bitnami/openldap
+    environment: 
+      LDAP_PORT_NUMBER: 1389
+      LDAP_ADMIN_USERNAME: admin
+      LDAP_ADMIN_PASSWORD: adminpassword
+      LDAP_USERS: user01
+      LDAP_PASSWORDS: userpassword
+      LDAP_ROOT: dc=example,dc=org
+      LDAP_ADMIN_DN: cn=admin,dc=example,dc=org
+    ports: 
+        - "1389:1389"
+    networks:
+      - inventory-app
+    volumes: 
+      - ldap-data:/bitnami/openldap
+      - ldap-config:/opt/bitnami/openldap/etc/slapd.d
+  phpldapadmin: 
+    image: ghcr.io/modul-i-ch-109/phpldapadmin
+    environment:
+      LDAP_NAME: inventory-ldap
+      LDAP_HOST: ldap
+      LDAP_PORT: 1389
+      LDAP_BASE: dc=example,dc=org
+      LDAP_BIND_ID: cn=admin,dc=example,dc=org
+    ports: 
+      - 8080:8080
+    networks:
+      - inventory-app
+    depends_on:
+      - ldap 
+  backend:
+    build: 
+      context: .
+      dockerfile: Dockerfile.backend
+    environment: 
+      POSTGRES_HOST: db
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    networks: 
+      - inventory-app
+    depends_on:
+      db:
+        condition: service_healthy
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    environment:
+      BACKEND_PROTOCOL: http
+      BACKEND_HOST: backend
+      BACKEND_PORT: 8080
+    networks:
+      - inventory-app
+    
