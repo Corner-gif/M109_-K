@@ -1,0 +1,58 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: petclinic-app-mysql
+  labels:
+    app: petclinic-app-mysql
+    app.kubernetes.io/part-of: pet-clinic
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: petclinic-app-mysql
+  template:
+    metadata:
+      labels:
+        app: petclinic-app-mysql
+    spec:
+      containers:
+      - name: petclinic-app-mysql
+        image: mysql:8.0.45-debian
+        imagePullPolicy: Always
+        resources: {}
+        ports:
+        - containerPort: 3306
+          protocol: TCP
+        volumeMounts:
+        - name: petclinic-app-mysql-data
+          mountPath: /var/lib/mysql
+        env:
+        - name: MYSQL_USER
+          valueFrom:
+            secretKeyRef:
+              name: petclinic-app-secret
+              key: database-user
+        - name: MYSQL_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: petclinic-app-secret
+              key: database-password
+        - name: MYSQL_ROOT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: petclinic-app-secret
+              key: database-root-password
+        - name: MYSQL_DATABASE
+          valueFrom:
+            secretKeyRef:
+              name: petclinic-app-secret
+              key: database-name
+        - name: DATABASE_HOST
+          valueFrom:
+            secretKeyRef:
+              name: petclinic-app-secret
+              key: database-host
+      volumes:
+      - name: petclinic-app-mysql-data
+        persistentVolumeClaim:
+          claimName: petclinic-app-mysql
